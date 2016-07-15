@@ -1,0 +1,41 @@
+version: '2'
+services:
+    web:
+        build:
+            context: ./Dockerfiles/nginx
+            dockerfile: ./Dockerfile
+        ports:
+            - "8080:80"
+        volumes_from:
+            - container:code-sync:rw # will be mounted on /app
+        links:
+            - phpfpm
+    phpfpm:
+        build:
+            context: ./Dockerfiles/phpfpm
+            dockerfile: ./Dockerfile
+        volumes_from:
+            - container:code-sync:rw # will be mounted on /app
+        links:
+            - db
+            - mail
+    db:
+        image: mariadb:10.1
+        ports:
+          - "3306:3306"
+        volumes:
+           - mysql:/var/lib/mysql
+        environment:
+           - MYSQL_ROOT_PASSWORD=root
+           - MYSQL_DATABASE=drupal
+    mail:
+        image: mailhog/mailhog:latest
+        ports:
+            - "1025:1025"
+            - "8025:8025"
+
+# thats the important thing
+volumes:
+    mysql:
+    code-sync:
+        external: true
