@@ -1,6 +1,6 @@
 # PHP docker
 
-This project is a blueprint for php devlopement with docker.
+This is a blueprint for php devlopement with docker on macosx.
 
 By default docker-compose will launch 4 containers:
  - nginx
@@ -8,13 +8,17 @@ By default docker-compose will launch 4 containers:
  - db (mariadb)
  - mailhog
 
-Nginy is configured to serve ./app/web.
+Nginx and phpfpm are on debian 8 because I'm familair with this OS.
+
+You can change the configuration of nginx or phpfpm in Dockerfiles folder to meet you need.
 
 This project use https://github.com/EugenMayer/docker-sync to sync your code with docker.
 
 ## Start a new project
 
-Create a local folder with app/web and put your code in it.
+By default Nginy is configured to serve ./app/web
+
+Create this folder, add your code, then:
 
 Start the syncronisation:
 
@@ -23,3 +27,8 @@ Start the syncronisation:
 Create your containers:
 
     $ docker-compose up
+
+
+Then check http://localhost:8080/
+
+Email are on: http://localhost:8025/
