@@ -51,6 +51,8 @@ server {
 		if (!-f $document_root$fastcgi_script_name) {
 			return 404;
 		}
+		# Mitigate https://httpoxy.org/ vulnerabilities
+		fastcgi_param HTTP_PROXY "";
 
 		fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
 		fastcgi_param PATH_INFO $fastcgi_path_info;
