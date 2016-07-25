@@ -4,7 +4,7 @@ This is a blueprint for php devlopement with docker on macosx.
 
 By default docker-compose will launch 4 containers:
  - nginx
- - phpfpm
+ - phpfpm (php5)
  - db (mariadb)
  - mailhog
 
