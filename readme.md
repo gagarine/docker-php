@@ -8,7 +8,7 @@ By default docker-compose will launch 4 containers:
 - db (mariadb)
 - mailhog (it catch all email send by the phpfpm server)
 
-Nginx and phpfpm are on debian 8 other are using smaller Alpine image.
+Nginx and phpfpm are on debian 8. Other containers are using smaller alpine image.
 
 You can change the configuration of nginx or phpfpm in Dockerfiles folder to meet you need.
 
@@ -27,10 +27,12 @@ Start the synchronisation:
 Create your containers:
 
     $ docker-compose up
+    
+Logs are redirected to the console, so you can quickly check php or mysql errors.
 
 Then check http://localhost:8080/
 
-Emails are at: http://localhost:8025/
+Emails are at: http://localhost:8025/ their are only stored in RAM.
 
 ## Access DB on localhost
 
