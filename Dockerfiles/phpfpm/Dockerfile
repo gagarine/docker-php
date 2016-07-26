@@ -8,8 +8,8 @@ MAINTAINER Perdrisat Simon "perdrisat@gmail.com"
 ADD https://www.dotdeb.org/dotdeb.gpg /tmp/dotdeb.gpg
 
 RUN echo "Install DotDeb" \
-	&& echo "deb http://packages.dotdeb.org wheezy-php56 all" > /etc/apt/sources.list.d/dotdeb.list \
-	&& echo "deb-src http://packages.dotdeb.org wheezy-php56 all" >> /etc/apt/sources.list.d/dotdeb.list \
+	&& echo "deb http://packages.dotdeb.org jessie all" > /etc/apt/sources.list.d/dotdeb.list \
+	&& echo "deb-src http://packages.dotdeb.org jessie all" >> /etc/apt/sources.list.d/dotdeb.list \
 	&& apt-key add /tmp/dotdeb.gpg \
 	&& rm /tmp/dotdeb.gpg \
 	&& apt-get update && apt-get -y upgrade \
