@@ -4,7 +4,7 @@ Docker for PHP development on mac OSX. This was only tested with [Docker for MAC
 
 By default docker-compose will launch 4 containers:
 - nginx
-- phpfpm
+- phpfpm (7.0 or 5.7)
 - db (mariadb)
 - mailhog (it catch all email send by the phpfpm server)
 
@@ -33,6 +33,23 @@ Logs are redirected to the console, so you can quickly check php or mysql errors
 Then check http://localhost:8080/
 
 Emails are at: http://localhost:8025/ their are only stored in RAM.
+
+## Chose the PHP version
+
+Configuration for PHP7.0 and PHP5.6 is provided. You can chose with one you want to use by editing the docker-compose.yml file:
+
+For PHP 5.7:
+
+    phpfpm:
+        build:
+            context: ./Dockerfiles/phpfpm/5.7
+
+For PHP 7.0:
+
+    phpfpm:
+        build:
+            context: ./Dockerfiles/phpfpm/7.0
+            
 
 ## Access DB on localhost
 
