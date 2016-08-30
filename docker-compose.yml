@@ -12,7 +12,7 @@ services:
             - phpfpm
     phpfpm:
         build:
-            context: ./Dockerfiles/phpfpm
+            context: ./Dockerfiles/phpfpm/7.0 # Avaible version are 7.0 and 5.7
             dockerfile: ./Dockerfile
         volumes_from:
             - container:code-sync:rw # will be mounted on /app
