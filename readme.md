@@ -16,9 +16,9 @@ This project use https://github.com/EugenMayer/docker-sync to sync your code wit
 
 ## Start a new project
 
-By default nginx is configured to serve ./app/web
+Copy every files of this repository in the root of your project.
 
-Create this folder, add your code, then:
+By default nginx is configured to serve ./app/web. So, add your code in ./app/web, then:
 
 Start the synchronisation:
 
@@ -28,9 +28,9 @@ Create your containers:
 
     $ docker-compose up
     
-Logs are redirected to the console, so you can quickly check php or mysql errors.
+All logs are redirected to the console, so you can quickly check php or mysql errors.
 
-Then check http://localhost:8080/
+Then load http://localhost:8080/ on your browser, you should see your PHP app.
 
 Emails are at: http://localhost:8025/ their are only stored in RAM.
 
