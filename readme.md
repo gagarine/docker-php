@@ -34,9 +34,9 @@ Then check http://localhost:8080/
 
 Emails are at: http://localhost:8025/ their are only stored in RAM.
 
-## Chose the PHP version
+## PHP version
 
-Configuration for PHP7.0 and PHP5.6 is provided. You can chose with one you want to use by editing the docker-compose.yml file:
+Configurations for PHP7.0 and PHP5.6 are provided and work out of the box. Chose the want to use by editing the docker-compose.yml file:
 
 For PHP 5.7:
 
