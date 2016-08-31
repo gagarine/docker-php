@@ -20,19 +20,22 @@ Copy every files of this repository in the root of your project.
 
 By default nginx is configured to serve ./app/web. So, add your code in ./app/web, then:
 
-Start the synchronisation:
+In a terminal start the synchronisation and let it run:
 
     $ docker-sync start
 
-Create your containers:
+In an other terminal launch your containers:
 
     $ docker-compose up
     
-All logs are redirected to the console, so you can quickly check php or mysql errors.
+All logs are redirected to the console, so you can quickly check nginx, php or mysql message.
 
 Then load http://localhost:8080/ on your browser, you should see your PHP app.
 
-Emails are at: http://localhost:8025/ their are only stored in RAM.
+Emails are accessible on the MailHog web interface: http://localhost:8025/ their are only stored in RAM.
+
+![Screenshot of MailHog web interface](https://raw.githubusercontent.com/mailhog/MailHog/master/docs/MailHog.png "MailHog web interface")
+
 
 ## PHP version
 
