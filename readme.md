@@ -1,6 +1,8 @@
 # Docker for PHP development on your local machine
 
-Docker for PHP development on mac OSX. This was only tested with [Docker for MAC](https://docs.docker.com/docker-for-mac/).
+Docker for PHP development on mac OSX with [Docker for MAC](https://docs.docker.com/docker-for-mac/).
+
+This was tested with: Drupal 6 and 7 and Symfony but should works with any PHP applications.
 
 By default docker-compose will launch 4 containers:
 - nginx
