@@ -14,11 +14,15 @@ Nginx and phpfpm are on debian 8. Other containers are using smaller alpine imag
 
 You can change the configuration of nginx or phpfpm in Dockerfiles folder to meet you need.
 
-This project use https://github.com/EugenMayer/docker-sync to sync your code with docker. This is a workaround to get (very) good performance until Docker for MAC shared volume is fixed.
+This project use http://docker-sync.io/ to sync your code with docker. This is a workaround to get (very) good performance until Docker for MAC shared volume is fixed.
+
+To install docker-sync:
+
+    $ gem install docker-sync
 
 ## Start a new project
 
-Copy every files of this repository in the root of your project.
+Copy every file of this repository in the root of your project.
 
 By default nginx is configured to serve ./app/web. So, add your code in ./app/web, then:
 
@@ -26,7 +30,7 @@ In a terminal start the synchronisation and let it run:
 
     $ docker-sync start
 
-In an other terminal launch your containers:
+In another terminal launch your containers:
 
     $ docker-compose up
     
@@ -34,14 +38,14 @@ All logs are redirected to the console, so you can quickly check nginx, php or m
 
 Then load http://localhost:8080/ on your browser, you should see your PHP app.
 
-Emails are accessible on the MailHog web interface: http://localhost:8025/ their are only stored in RAM.
+All emails are caught (no email can go out accidentally) and stored in RAM. You can read emails on the MailHog web interface: http://localhost:8025/.
 
 ![Screenshot of MailHog web interface](https://raw.githubusercontent.com/mailhog/MailHog/master/docs/MailHog.png "MailHog web interface")
 
 
 ## PHP version
 
-Configurations for PHP7.0 and PHP5.6 are provided and work out of the box. Chose the want to use by editing the docker-compose.yml file:
+Configurations for PHP7.0 and PHP5.6 are provided and work out of the box. You can chose the version you want by editing the docker-compose.yml file:
 
 For PHP 5.7:
 
