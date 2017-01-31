@@ -8,7 +8,7 @@ By default docker-compose will launch 4 containers:
 - nginx
 - phpfpm (7.0 or 5.7)
 - db (mariadb)
-- mailhog (it catch all email send by the phpfpm server)
+- mailhog ([MailHog](https://github.com/mailhog/MailHog) is configured to catch all email send by the phpfpm server)
 
 Nginx and phpfpm are on debian 8. Other containers are using smaller alpine image.
 
