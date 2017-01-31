@@ -36,7 +36,7 @@ In another terminal launch your containers:
     
 All logs are redirected to the console, so you can quickly check nginx, php or mysql message.
 
-Then load http://localhost:8080/ on your browser, you should see your PHP app.
+Then load [http://localhost:8080](http://localhost:8080) on your browser, you should see your PHP app.
 
 
 ## PHP version
@@ -64,6 +64,6 @@ The DB port is exposed. To easily access it you can add this to your /etc/hosts
     
 ## Emails
 
-All emails are caught (no email can go out accidentally) and stored in RAM. You can read emails on the MailHog web interface: http://localhost:8025/.
+All emails are caught (no email can go out accidentally) and stored in RAM. You can read emails on the MailHog web interface: [http://localhost:8025](http://localhost:8025) .
 
 ![Screenshot of MailHog web interface](https://raw.githubusercontent.com/mailhog/MailHog/master/docs/MailHog.png "MailHog web interface")
