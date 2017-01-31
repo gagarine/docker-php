@@ -38,10 +38,6 @@ All logs are redirected to the console, so you can quickly check nginx, php or m
 
 Then load http://localhost:8080/ on your browser, you should see your PHP app.
 
-All emails are caught (no email can go out accidentally) and stored in RAM. You can read emails on the MailHog web interface: http://localhost:8025/.
-
-![Screenshot of MailHog web interface](https://raw.githubusercontent.com/mailhog/MailHog/master/docs/MailHog.png "MailHog web interface")
-
 
 ## PHP version
 
@@ -65,4 +61,9 @@ For PHP 7.0:
 The DB port is exposed. To easily access it you can add this to your /etc/hosts
 
     db 127.0.0.1
+    
+## Emails
 
+All emails are caught (no email can go out accidentally) and stored in RAM. You can read emails on the MailHog web interface: http://localhost:8025/.
+
+![Screenshot of MailHog web interface](https://raw.githubusercontent.com/mailhog/MailHog/master/docs/MailHog.png "MailHog web interface")
