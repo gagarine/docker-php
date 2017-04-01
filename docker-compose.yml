@@ -20,7 +20,7 @@ services:
             - db
             - mail
     db:
-        image: mariadb:10.1
+        image: mariadb:10.latest
         ports:
           - "3306:3306"
         volumes:
