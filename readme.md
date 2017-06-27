@@ -14,30 +14,19 @@ Nginx and phpfpm are on debian 8. Other containers are using smaller alpine imag
 
 You can change the configuration of nginx or phpfpm in Dockerfiles folder to meet you need.
 
-This project use http://docker-sync.io/ to sync your code with docker. This is a workaround to get (very) good performance until Docker for MAC shared volume is fixed.
-
-To install docker-sync:
-
-    $ gem install docker-sync
-
 ## Start a new project
 
 Copy every file of this repository in the root of your project.
 
 By default nginx is configured to serve ./app/web. So, add your code in ./app/web, then:
 
-In a terminal start the synchronisation and let it run:
-
-    $ docker-sync start
-
-In another terminal launch your containers:
+In a terminal launch your containers:
 
     $ docker-compose up
-    
+
 All logs are redirected to the console, so you can quickly check nginx, php or mysql message.
 
 Then load [http://localhost:8080](http://localhost:8080) on your browser, you should see your PHP app.
-
 
 ## PHP version
 
@@ -54,14 +43,13 @@ For PHP 7.0:
     phpfpm:
         build:
             context: ./Dockerfiles/phpfpm/7.0
-            
 
 ## Access DB on localhost
 
 The DB port is exposed. To easily access it you can add this to your /etc/hosts
 
     db 127.0.0.1
-    
+
 ## Emails
 
 All emails are caught (no email can go out accidentally) and stored in RAM. You can read emails on the MailHog web interface: [http://localhost:8025](http://localhost:8025) .
