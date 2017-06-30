@@ -5,36 +5,29 @@ services:
             context: ./Dockerfiles/nginx
             dockerfile: ./Dockerfile
         ports:
-            - "8080:80"
-        volumes_from:
-            - container:code-sync:rw # will be mounted on /app
+            - "80:80"
+        volumes:
+            - ./app:/app
         links:
             - phpfpm
     phpfpm:
         build:
             context: ./Dockerfiles/phpfpm/7.0 # Avaible version are 7.0 and 5.7
             dockerfile: ./Dockerfile
-        volumes_from:
-            - container:code-sync:rw # will be mounted on /app
+        volumes:
+            - ./app:/app
         links:
-            - db
-            - mail
+            - db:mysql
     db:
-        image: mariadb:10.latest
+        image: mariadb:latest
         ports:
           - "3306:3306"
         volumes:
            - mysql:/var/lib/mysql
         environment:
            - MYSQL_ROOT_PASSWORD=root
-           - MYSQL_DATABASE=drupal
-    mail:
-        image: mailhog/mailhog:latest
-        ports:
-            - "1025:1025"
-            - "8025:8025"
+           - MYSQL_DATABASE=test
 
-# thats the important thing
 volumes:
     mysql:
     code-sync:
